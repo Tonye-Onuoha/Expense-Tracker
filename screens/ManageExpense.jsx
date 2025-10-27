@@ -23,7 +23,7 @@ function ManageExpense({ navigation, route }) {
     const handleDeleteExpense = async () => {
         setIsSubmitting(true);
         try {
-            // await deleteExpense(expenseId);
+            await deleteExpense(expenseId);
             expensesContext.deleteExpense(expenseId);
             navigation.goBack();
         } catch {
@@ -41,7 +41,7 @@ function ManageExpense({ navigation, route }) {
         if (isEditing) {
             try {
                 // we wait for this operation to execute completely before navigating to the previous screen.
-                // await updateExpense(expenseId, expenseData);
+                await updateExpense(expenseId, expenseData);
                 expensesContext.updateExpense(expenseId, expenseData);
                 navigation.goBack();
             } catch {
@@ -51,8 +51,8 @@ function ManageExpense({ navigation, route }) {
         } else {
             try {
                 // we save to the database first in order to get the auto-created id.
-                // const expenseId = await storeExpense(expenseData);
-                expensesContext.addExpense({ ...expenseData, id: idGenerator() });
+                const expenseId = await storeExpense(expenseData);
+                expensesContext.addExpense({ ...expenseData, id: expenseId });
                 navigation.goBack();
             } catch {
                 setError("Could not register new expense!");

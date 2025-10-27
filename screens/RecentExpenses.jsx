@@ -23,8 +23,8 @@ function RecentExpenses() {
     useEffect(() => {
         async function getExpenses() {
             try {
-                // const fetchedExpenses = await fetchExpenses();
-                // expensesContext.setExpenses(fetchedExpenses);
+                const fetchedExpenses = await fetchExpenses();
+                expensesContext.setExpenses(fetchedExpenses);
             } catch {
                 setError("Could not fetch expenses!");
             } finally {
