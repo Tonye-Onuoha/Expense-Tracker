@@ -4,6 +4,10 @@ An elegant and intuitive mobile application built to help users track their dail
 Tracker allows users to record, view, and categorize their spending while providing an easy way to monitor financial
 habits over time.
 
+# 🖼️ Screenshot
+
+![Screenshot](./expense-tracker.png)
+
 # 🧭 Table of Contents
 
 ## Overview
